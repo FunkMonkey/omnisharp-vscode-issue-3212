@@ -1,0 +1,31 @@
+# ignore parent editorconfig files
+root = true
+
+# Don't use tabs for indentation.
+[*]
+indent_style = space
+# (Please don't specify an indent_size here; that has too many unintended consequences.)
+
+# Code files
+[*.{cs,csx,vb,vbx}]
+indent_size = 4
+insert_final_newline = true
+charset = utf-8-bom
+	
+[*.cs]
+dotnet_style_qualification_for_field = true:error
+dotnet_style_qualification_for_property = true:error
+dotnet_style_qualification_for_method = true:error
+dotnet_style_qualification_for_event = true:error
+
+csharp_style_expression_bodied_methods = true:suggestion
+
+# rules
+dotnet_naming_rule.instance_fields_should_be_camel_case.severity = suggestion
+dotnet_naming_rule.instance_fields_should_be_camel_case.symbols = instance_fields
+dotnet_naming_rule.instance_fields_should_be_camel_case.style = instance_field_style
+
+dotnet_naming_symbols.instance_fields.applicable_kinds = field
+
+dotnet_naming_style.instance_field_style.capitalization = camel_case
+dotnet_naming_style.instance_field_style.required_prefix = _
